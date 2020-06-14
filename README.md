@@ -43,6 +43,26 @@ Join the translation efforts on [Transifex](https://transifex.com/blockstream/es
 
 - Mainnet, Testnet and Elements high performance electrum server
 
+## Sugarchain Testing
+
+To start on local machine, you may do, run:
+
+```bash
+$ git clone https://github.com/sugarchain-project/esplora.git && cd esplora
+$ npm install
+$ npm run dist sugar-mainnet # (or sugar-testnet)
+# change URL in `flavors/sugar-testnet/config.env`:
+# export BASE_HREF=${BASE_HREF:-'/esplora-testnet/'}
+# change "/esplora/" to "/" for local testing
+# if you want to host on github pages: `/esplora-testnet/` for `https://sugarchain-project.github.io/esplora-testnet/`
+$ cd dist
+$ python3 -m http.server
+```
+
+*Warning: `BASE_HREF` will be hardcoded. If your URL is changed, you have to change in `config.env`.*
+
+The server will be available at http://localhost:8000/
+
 ## Developing
 
 To start a development server with live babel/browserify transpilation, run:
