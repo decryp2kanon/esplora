@@ -1,5 +1,5 @@
 node_modules
-#dist
+dist/*
 terraform/.terraform
 terraform/.terraform/environment
 terraform/*.tfstate.backup
